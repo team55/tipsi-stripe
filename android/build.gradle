@@ -4,7 +4,8 @@ def DEFAULT_COMPILE_SDK_VERSION             = 28
 def DEFAULT_TARGET_SDK_VERSION              = 28
 def DEFAULT_BUILD_TOOLS_VERSION             = '28.0.3'
 
-def DEFAULT_GOOGLE_PLAY_SERVICES_VERSION    = "16.1.0"
+// def DEFAULT_GOOGLE_PLAY_SERVICES_VERSION    = "16.1.0"
+def DEFAULT_GOOGLE_PLAY_SERVICES_WALLET_VERSION    = "16.0.1"
 def DEFAULT_FIREBASE_CORE_VERSION           = "16.0.7"
 def DEFAULT_SUPPORT_LIB_VERSION             = "28.0.0"
 
@@ -32,14 +33,15 @@ android {
 
 dependencies {
   def firebaseCoreVersion = project.hasProperty('firebaseCoreVersion') ? project.firebaseCoreVersion : DEFAULT_FIREBASE_CORE_VERSION
-  def googlePlayServicesVersion = rootProject.hasProperty('googlePlayServicesVersion')  ? rootProject.googlePlayServicesVersion : DEFAULT_GOOGLE_PLAY_SERVICES_VERSION
+  // def googlePlayServicesVersion = rootProject.hasProperty('googlePlayServicesVersion')  ? rootProject.googlePlayServicesVersion : DEFAULT_GOOGLE_PLAY_SERVICES_VERSION
+  def googlePlayServicesWalletVersion = rootProject.hasProperty('googlePlayServicesWalletVersion')  ? rootProject.googlePlayServicesWalletVersion : DEFAULT_GOOGLE_PLAY_SERVICES_WALLET_VERSION
   def supportLibVersion = project.hasProperty('supportLibVersion') ? project.supportLibVersion : DEFAULT_SUPPORT_LIB_VERSION
 
   compile fileTree(include: ['*.jar'], dir: 'libs')
   compile 'com.facebook.react:react-native:+'
   implementation "com.android.support:appcompat-v7:$supportLibVersion"
   implementation "com.android.support:support-v4:$supportLibVersion"
-  compile "com.google.android.gms:play-services-wallet:$googlePlayServicesVersion"
+  compile "com.google.android.gms:play-services-wallet:$googlePlayServicesWalletVersion"
   compile "com.google.firebase:firebase-core:$firebaseCoreVersion"
   
   compile 'com.stripe:stripe-android:8.1.0'
