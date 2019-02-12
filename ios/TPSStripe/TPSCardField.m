@@ -19,7 +19,8 @@
 }
 
 - (void)dealloc {
-    [[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardWillShowNotification object:self.window];
+    // fix issue https://github.com/tipsi/tipsi-stripe/issues/408
+    // [[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardWillShowNotification object:self.window];
 }
 
 - (instancetype)initWithFrame:(CGRect)frame {
@@ -29,11 +30,12 @@
         _paymentCardTextField.delegate = self;
         [self addSubview:_paymentCardTextField];
         self.backgroundColor = [UIColor clearColor];
-        [[NSNotificationCenter defaultCenter]
-            addObserver:self
-               selector:@selector(keyboardWillShow:)
-                   name:UIKeyboardWillShowNotification
-                 object:self.window];
+        // fix issue https://github.com/tipsi/tipsi-stripe/issues/408
+        // [[NSNotificationCenter defaultCenter]
+        //     addObserver:self
+        //        selector:@selector(keyboardWillShow:)
+        //            name:UIKeyboardWillShowNotification
+        //          object:self.window];
     }
     return self;
 }
