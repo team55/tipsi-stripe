@@ -7,6 +7,9 @@ React Native Stripe binding for iOS/Android platforms
 
 ## Changelog
 
+7.2.1 fix for version: 7.2.0 - Stripe 14.0.1 for xcode 11.4
+
+
 [[7.0.0] - 2019-01-08 **Breaking changes**](/CHANGELOG.md#700---2019-01-08)
 
 [[6.1.0] - 2018-10-28](/CHANGELOG.md#610---2018-10-28)
